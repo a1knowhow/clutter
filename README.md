@@ -1,6 +1,6 @@
 # Cuttle
 
-Cuttle is an embedded Go knowledge graph library with two timelines, evidence, a fluent API (Application Programming Interface), read-only parameterized Cypher, and a Cobra CLI (Command-Line Interface). It stores generic nodes and relationships. Callers supply extracted facts.
+Cuttle is an embedded Go knowledge graph library with two timelines, evidence, a fluent API , read-only parameterized Cypher, and a CLI. It stores generic nodes and relationships. Callers supply extracted facts.
 
 ## Build
 
@@ -40,10 +40,8 @@ Run from the repository root. Every invocation reopens the same durable graph fi
 The runnable Go examples import once, reopen safely, compare fluent and Cypher results, and output evidence through both interfaces:
 
 ```sh
-go run ./examples/tender /tmp/cuttle-tender
-go run ./examples/tender /tmp/cuttle-tender
-go run ./examples/storybrand /tmp/cuttle-storybrand
-go run ./examples/storybrand /tmp/cuttle-storybrand
+go run ./examples/tender /tmp/cuttle-tender | jq
+go run ./examples/storybrand /tmp/cuttle-storybrand | jq
 ```
 
 Batch input and command output use JSON (JavaScript Object Notation). Signed 64-bit integer values retain their exact values, including values beyond floating-point precision; oversized integer input is rejected. Labels must be unique and nonempty; text cannot contain a zero byte; nested properties are limited to 64 levels. Evidence entries require a source and source revision, and property-specific evidence must name an existing property. Omit `--file` or use `--file -` to read standard input. Errors go to standard error as an object with `code` and `error`; failures return a nonzero exit status.

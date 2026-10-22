@@ -1,6 +1,6 @@
 module github.com/a1knowhow/cuttle
 
-go 1.27.3
+go 1.27
 
 require (
 	github.com/mattn/go-sqlite3 v1.14.52
