@@ -1,0 +1,31 @@
+{
+  "operations": [
+    {
+      "kind": "create", "id": "requirement-1", "reason": "Import tender requirement", "actor": "example-importer",
+      "valid": {"from": "2026-10-01T00:00:00Z"},
+      "node": {
+        "labels": ["Requirement"],
+        "properties": {"text": "Encrypt stored customer data", "priority": "mandatory"},
+        "evidence": [{"source": "tender-document", "revision": "v1", "locator": "section 4.2", "property": "text", "activity": "manual-example"}]
+      }
+    },
+    {
+      "kind": "create", "id": "capability-1", "reason": "Import proposed capability",
+      "valid": {"from": "2026-10-01T00:00:00Z"},
+      "node": {
+        "labels": ["Capability"],
+        "properties": {"name": "Encrypted storage"},
+        "evidence": [{"source": "solution-description", "revision": "v1", "locator": "Security", "activity": "manual-example"}]
+      }
+    },
+    {
+      "kind": "create", "id": "coverage-1", "reason": "Record explicit requirement coverage",
+      "valid": {"from": "2026-10-01T00:00:00Z"},
+      "relationship": {
+        "from": "capability-1", "to": "requirement-1", "type": "SATISFIES",
+        "properties": {"status": "proposed"},
+        "evidence": [{"source": "solution-description", "revision": "v1", "locator": "Security", "activity": "manual-example"}]
+      }
+    }
+  ]
+}
