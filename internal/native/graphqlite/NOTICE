@@ -1,0 +1,14 @@
+GraphQLite v0.12.0
+Upstream: https://github.com/colliery-io/graphqlite
+Commit: 995a8b9bc25cdd86d4c2b50ff7ff87f0eb236629
+License: MIT; see LICENSE.graphqlite.
+Generated parser: GNU Bison 3.8.2; scanner: Flex 2.6.4.
+
+Local Cuttle modifications:
+- Canonical SQL entity rendering (entity_json_sql.h) and typed entity rendering
+  (agtype.c) emit the reserved __cuttle_entity_kind discriminator for actual
+  native node/relationship values, including nested result values.
+- Public Cypher parsing and recursive input validation reject that map key in
+  caller map literals, parameters and stored nested properties. Ordinary maps,
+  including properties(n), remain ordinary and cannot forge entity results.
+- The ordinary upstream cypher result serializer is otherwise unchanged.

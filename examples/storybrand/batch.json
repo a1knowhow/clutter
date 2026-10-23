@@ -1,0 +1,31 @@
+{
+  "operations": [
+    {
+      "kind": "create", "id": "pain-1", "reason": "Import stated customer pain", "actor": "example-importer",
+      "valid": {"from": "2026-10-01T00:00:00Z"},
+      "node": {
+        "labels": ["Pain", "ExternalPain"],
+        "properties": {"text": "Tender evidence is scattered across documents"},
+        "evidence": [{"source": "landing-page", "revision": "v1", "locator": "Problem section", "property": "text", "activity": "manual-example"}]
+      }
+    },
+    {
+      "kind": "create", "id": "soundbite-1", "reason": "Import marketing sound bite",
+      "valid": {"from": "2026-10-01T00:00:00Z"},
+      "node": {
+        "labels": ["SoundBite"],
+        "properties": {"text": "Find the evidence behind every requirement"},
+        "evidence": [{"source": "landing-page", "revision": "v1", "locator": "Hero section", "property": "text", "activity": "manual-example"}]
+      }
+    },
+    {
+      "kind": "create", "id": "message-1", "reason": "Link the message to its stated pain",
+      "valid": {"from": "2026-10-01T00:00:00Z"},
+      "relationship": {
+        "from": "soundbite-1", "to": "pain-1", "type": "ADDRESSES",
+        "properties": {"reviewed": false},
+        "evidence": [{"source": "landing-page", "revision": "v1", "locator": "Hero and problem sections", "activity": "manual-example"}]
+      }
+    }
+  ]
+}
