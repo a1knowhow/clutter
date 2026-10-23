@@ -1,5 +1,9 @@
 # Cuttle
 
+<p align="center">
+  <img src="assets/cuttle.svg" alt="Cuttle, Go knowledge graph library" width="180">
+</p>
+
 Cuttle is an embedded Go knowledge graph library with two timelines, evidence, a fluent API , read-only parameterized Cypher, and a CLI. It stores generic nodes and relationships. Callers supply extracted facts.
 
 ## Build
